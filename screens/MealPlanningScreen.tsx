@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 const MealPlanningScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Planification des repas</Text>
+      
     </View>
   );
 };

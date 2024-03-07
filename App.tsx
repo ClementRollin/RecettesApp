@@ -28,7 +28,7 @@ function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Accueil' }} />
         <Stack.Screen name="Recipes" component={RecipesScreen} options={{ title: 'Recettes' }} />
-        <Stack.Screen name="MealPlanning" component={MealPlanningScreen} options={{ title: 'Planification des Repas' }} />
+        <Stack.Screen name="MealPlanning" component={MealPlanningScreen} options={{ title: 'Recettes Favorites' }} />
         <Stack.Screen name="RecipeDetails" component={RecipeDetailsScreen} options={{ title: 'Détails de la Recette' }} />
       </Stack.Navigator>
     </NavigationContainer>
