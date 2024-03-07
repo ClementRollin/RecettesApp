@@ -5,7 +5,6 @@ const MealPlanningScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Planification des repas</Text>
-      {/* Ici, vous ajouterez la logique pour la planification des repas */}
     </View>
   );
 };
