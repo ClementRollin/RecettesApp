@@ -1,20 +1,38 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export default function App() {
+import HomeScreen from './screens/HomeScreen';
+import RecipesScreen from './screens/RecipesScreen';
+import MealPlanningScreen from './screens/MealPlanningScreen';
+import RecipeDetailsScreen from './screens/RecipeDetailsScreen';
+
+type Recipe = {
+  id: number;
+  title: string;
+  image: string;
+};
+
+export type RootStackParamList = {
+  Home: undefined;
+  Recipes: undefined;
+  MealPlanning: undefined;
+  RecipeDetails: { recipe: Recipe };
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Accueil' }} />
+        <Stack.Screen name="Recipes" component={RecipesScreen} options={{ title: 'Recettes' }} />
+        <Stack.Screen name="MealPlanning" component={MealPlanningScreen} options={{ title: 'Planification des Repas' }} />
+        <Stack.Screen name="RecipeDetails" component={RecipeDetailsScreen} options={{ title: 'Détails de la Recette' }} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
