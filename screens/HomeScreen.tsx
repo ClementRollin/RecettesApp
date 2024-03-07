@@ -49,12 +49,12 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   button: {
-    backgroundColor: '#FFD700', // gold color
+    backgroundColor: '#FFD700',
     padding: 10,
     borderRadius: 5,
   },
   buttonText: {
-    color: '#000', // black color
+    color: '#000',
     fontSize: 16,
   },
 });
